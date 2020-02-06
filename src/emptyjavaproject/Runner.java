@@ -9,13 +9,14 @@ package emptyjavaproject;
  *
  * @author paul.kline
  */
-public class Main {
+public class Runner {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Account account = new Account();
     }
     
 }
