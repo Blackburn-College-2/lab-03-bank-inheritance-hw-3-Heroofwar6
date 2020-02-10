@@ -10,24 +10,29 @@ package emptyjavaproject;
  * @author cameron.shinall
  */
 public class Money {
+
     Currency currency;
     double amount;
-    
-    public Money(Currency currency, double amount){
+
+    public Money(Currency currency, double amount) {
         this.currency = currency;
         this.amount = amount;
     }
-    public String getAmountString(){
-        
+
+    public String getAmountString() {
+        return currency.symbol;
     }
-    public Money add(Money input){
-        
+
+    public Money add(Money input) {
+        return null;
     }
-    public Money subtract(Money input){
-        
+
+    public Money subtract(Money input) {
+        return null;
     }
+
     @Override
-    public String toString(){
-        
+    public String toString() {
+        return null;
     }
 }

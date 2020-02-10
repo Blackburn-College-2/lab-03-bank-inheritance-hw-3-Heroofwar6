@@ -19,6 +19,6 @@ public class Currency {
     }
     @Override
     public boolean equals(Object object){
-        
+        return false;
     }
 }

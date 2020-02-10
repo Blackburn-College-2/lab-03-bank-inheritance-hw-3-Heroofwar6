@@ -16,7 +16,11 @@ public class Runner {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Account account = new Account();
+        Currency currency = new Currency("Dollars", "$");
+        Money money = new Money(currency, 1000.00);
+        Account account = new Account(money);
+        Money deposit = new Money(currency, 50.00);
+        account.deposit(money);
     }
     
 }

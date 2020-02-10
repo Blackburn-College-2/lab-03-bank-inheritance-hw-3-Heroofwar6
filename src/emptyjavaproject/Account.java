@@ -17,14 +17,15 @@ public class Account {
     
     public Account(Money balance){
         this.balance = balance;
+        history.add(balance);
     }
     public void withdraw(Money m){
-        balance.subtract(m);
+        history.add(balance.subtract(m));
     }
     public void deposit(Money m){
         balance.add(m);
     }
     public Money getBalance(){
-        return null;
+        return balance;
     }
 }
