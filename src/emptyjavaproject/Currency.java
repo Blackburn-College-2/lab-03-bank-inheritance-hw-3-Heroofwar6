@@ -10,15 +10,28 @@ package emptyjavaproject;
  * @author cameron.shinall
  */
 public class Currency {
-    String name;
-    String symbol;
-    
-    public Currency(String name, String symbol){
+
+    private String name;
+    private String symbol;
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public Currency(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
     }
+
     @Override
-    public boolean equals(Object object){
-        return false;
+    public boolean equals(Object object) {
+        if (!(object instanceof Currency)) {
+            return false;
+        }
+        return ((Currency) object).name.equalsIgnoreCase(this.name);
     }
+    public String getName(){
+        return name;
+    }
+    
 }

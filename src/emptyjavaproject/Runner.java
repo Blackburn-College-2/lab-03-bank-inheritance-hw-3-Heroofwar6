@@ -20,7 +20,14 @@ public class Runner {
         Money money = new Money(currency, 1000.00);
         Account account = new Account(money);
         Money deposit = new Money(currency, 50.00);
-        account.deposit(money);
+        account.deposit(deposit);
+        Money yeyeye = new Money(currency, -50.00);
+        account.withdraw(yeyeye);
+        Money hehehe = new Money(currency, 100.00);
+        account.deposit(hehehe);
+        Money lol = new Money(currency, -90.00);
+        account.withdraw(lol);
+        System.out.println(account.printHistory());
     }
-    
+
 }

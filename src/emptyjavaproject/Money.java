@@ -11,8 +11,12 @@ package emptyjavaproject;
  */
 public class Money {
 
-    Currency currency;
-    double amount;
+    private Currency currency;
+    private double amount;
+
+    public double getAmount() {
+        return amount;
+    }
 
     public Money(Currency currency, double amount) {
         this.currency = currency;
@@ -20,19 +24,31 @@ public class Money {
     }
 
     public String getAmountString() {
-        return currency.symbol;
+        return currency.getSymbol();
     }
 
     public Money add(Money input) {
-        return null;
+        if(this.currency.equals(input.getCurrency())){
+            this.amount = this.amount + input.amount;
+            return this;
+        }else {
+            return null;
+        }
     }
-
+    public Currency getCurrency(){
+        return currency;
+    }
     public Money subtract(Money input) {
-        return null;
+        if(this.currency.equals(input.getCurrency())){
+            this.amount = this.amount - input.amount;
+            return this;
+        }else {
+            return null;
+        }
     }
 
     @Override
     public String toString() {
-        return null;
+        return this.amount + this.currency.getSymbol();
     }
 }
