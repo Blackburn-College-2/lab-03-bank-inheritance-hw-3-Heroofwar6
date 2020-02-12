@@ -19,14 +19,17 @@ public class Runner {
         Currency currency = new Currency("Dollars", "$");
         Money money = new Money(currency, 1000.00);
         Account account = new Account(money);
+        System.out.println("Initial Balance " + account.balance.getAmount());
         Money deposit = new Money(currency, 50.00);
         account.deposit(deposit);
-        Money yeyeye = new Money(currency, -50.00);
+        Money yeyeye = new Money(currency, -20.00);
         account.withdraw(yeyeye);
         Money hehehe = new Money(currency, 100.00);
         account.deposit(hehehe);
         Money lol = new Money(currency, -90.00);
         account.withdraw(lol);
+        Money why = new Money(currency, -45.00);
+        account.withdraw(why);
         System.out.println(account.printHistory());
     }
 

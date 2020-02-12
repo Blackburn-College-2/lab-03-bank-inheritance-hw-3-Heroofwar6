@@ -13,20 +13,38 @@ public class Money {
 
     private Currency currency;
     private double amount;
-
+    
+    /**
+     * 
+     * @return the amount of moneys 
+     */
     public double getAmount() {
         return amount;
     }
-
+    
+    /**
+     * 
+     * @param currency to check the type of currency
+     * @param amount the amount of money
+     */
     public Money(Currency currency, double amount) {
         this.currency = currency;
         this.amount = amount;
     }
 
+    /**
+     * 
+     * @return to return the symbol of currency for the given money
+     */
     public String getAmountString() {
         return currency.getSymbol();
     }
 
+    /**
+     * 
+     * @param input the given money to add to the amount
+     * @return the change in money
+     */
     public Money add(Money input) {
         if(this.currency.equals(input.getCurrency())){
             this.amount = this.amount + input.amount;
@@ -35,9 +53,20 @@ public class Money {
             return null;
         }
     }
+    
+    /**
+     * 
+     * @return the type of currency
+     */
     public Currency getCurrency(){
         return currency;
     }
+    
+    /**
+     * 
+     * @param input the money used to subtract from the amount
+     * @return the new amount
+     */
     public Money subtract(Money input) {
         if(this.currency.equals(input.getCurrency())){
             this.amount = this.amount - input.amount;
@@ -46,9 +75,13 @@ public class Money {
             return null;
         }
     }
-
+    
+    /**
+     * 
+     * @return to return strings such as $100.0
+     */
     @Override
     public String toString() {
-        return this.amount + this.currency.getSymbol();
+        return  this.currency.getSymbol()+this.amount;
     }
 }
